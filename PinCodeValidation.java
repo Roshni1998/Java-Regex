@@ -17,6 +17,6 @@ public class PinCodeValidation {
 	 */
 
 	public boolean validPinCode(String pincode) {
-		return Pattern.matches("(^[^A-Za-z]){1}[1-9]{1}[0-9]{6}$", pincode);
+		return Pattern.matches("([1-9]{1}[0-9]{2}\\s{0,1}[0-9]{3}", pincode);
 	}
 }
