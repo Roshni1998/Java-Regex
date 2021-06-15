@@ -19,5 +19,6 @@ public class PinCodeValidationTest {
 		assertTrue(code.validPinCode("056432"));
 		assertFalse(code.validPinCode("40rt88"));
 		assertFalse(code.validPinCode("40008823"));
+		assertFalse(code.validPinCode("A400088"));
 	}
 }
