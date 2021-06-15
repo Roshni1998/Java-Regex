@@ -17,11 +17,11 @@ public class EmailValidation {
 	 * validating for an email id
 	 */
 
-	public static boolean isValidEmailId(String pinCode) {
+	public static boolean isValidEmailId(String emailId) {
 		// Regex to check valid Email Id
 		String regex = "^([a-zA-Z0-9.]+)$";
 		Pattern p = Pattern.compile(regex);
-		Matcher m = p.matcher(pinCode);
+		Matcher m = p.matcher(emailId);
 		return m.matches();
 	}
 
