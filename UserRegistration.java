@@ -44,9 +44,11 @@ public class UserRegistration {
 	/*UC-5, UC-6*/
 	/* Password should contain minimum 8 Characters
 	 * Password should have at least 1 Upper Case
+	 * Should have at least 1 numeric number in the password
+	 * Has exactly 1 Special Character
 	 */
 	public static boolean isValidPassword(String password) {
-		return Pattern.matches("^(?=.*[0-9])(?=.*[A-Z]).{8,20}$", password);
+		return Pattern.matches("^(?=.*[0-9])(?=.*[A-Z])(?=.*[@#$%^&-+=()]).{8,20}$", password);
 	}
 	
 	public static void main(String[] args) {
