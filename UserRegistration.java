@@ -19,7 +19,7 @@ public class UserRegistration {
 	//First name starts with Cap and has minimum 3 characters
 	
 	public static boolean isValidFirstName(String firstName) {
-		return Pattern.matches("^[A-Z][a-z_-]{3,15}$", firstName);
+		return Pattern.matches("^[A-Z][a-z]{3,15}$", firstName);
 	}
 	
 	/*UC-2*/
@@ -46,7 +46,7 @@ public class UserRegistration {
 	 * Password should have at least 1 Upper Case
 	 */
 	public static boolean isValidPassword(String password) {
-		return Pattern.matches("^(?=.*[A-Z]).{8,20}$", password);
+		return Pattern.matches("^(?=.*[0-9])(?=.*[A-Z]).{8,20}$", password);
 	}
 	
 	public static void main(String[] args) {
@@ -63,11 +63,11 @@ public class UserRegistration {
 		System.out.println("Enter Your Password : ");
 		String password = in.nextLine();
 		
-		System.out.println("Is First Name valid ? : " +isValidFirstName(firstName));
-		System.out.println("Is Last Name valid ? : " +isValidLastName(lastName));
-		System.out.println("Is Email ID valid ? : " +isValidEmailId(emailId));
+		System.out.println("Is First Name valid ? : " + isValidFirstName(firstName));
+		System.out.println("Is Last Name valid ? : " + isValidLastName(lastName));
+		System.out.println("Is Email ID valid ? : " + isValidEmailId(emailId));
 		System.out.println("Is Mobile Number valid ? : " +isValidMobileNo(mobileNo));
-		System.out.println("Is a Password valid ?: " +isValidPassword(password));
+		System.out.println("Is a Password valid ?: " + isValidPassword(password));
 
 
 	}
