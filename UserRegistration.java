@@ -19,14 +19,14 @@ public class UserRegistration {
 	//First name starts with Cap and has minimum 3 characters
 	
 	public static boolean isValidFirstName(String firstName) {
-		return Pattern.matches("^[A-Z]{1}[a-z_-]{3,15}$", firstName);
+		return Pattern.matches("^[A-Z][a-z]{3,15}$", firstName);
 	}
 	
 	/*UC-2*/
 	// Last name starts with Cap and has minimum 3 characters
 	
 	public static boolean isValidLastName(String lastName) {
-		return Pattern.matches("^[A-Z]{1}[a-z_-]{3,15}$", lastName);
+		return Pattern.matches("^[A-Z][a-z]{3,15}$", lastName);
 	}
 	
 	/*UC-3*/
@@ -34,6 +34,13 @@ public class UserRegistration {
 	public static boolean isValidEmailId(String emailId) {
 		return Pattern.matches("^([a-zA-Z0-9.]+)([0-9a-zA-Z]{0,1}@([a-zA-Z0-9.]+([a-zA-Z]{2,3}))+([a-z]{0,2}))$", emailId);
 	}
+	
+	/*UC-4*/
+	//Country code follow by space and 10 digit number
+	public static boolean isValidMobileNo(String mobileNo) {
+		return Pattern.matches("(0|91)?\s([7-9][0-9]{9})", mobileNo);
+	}
+	
 	
 	public static void main(String[] args) {
 		
@@ -44,9 +51,15 @@ public class UserRegistration {
 		String lastName = in.nextLine();
 		System.out.println("Enter Your Email ID : ");
 		String emailId = in.nextLine();
+		System.out.println("Enter Your Mobile Number : ");
+		String mobileNo = in.nextLine();
+		
 		System.out.println("Is First Name valid ? : "+isValidFirstName(firstName));
-		System.out.println("Is Last Name valid : "+isValidLastName(lastName));
-		System.out.println("Is Email ID valid : "+isValidEmailId(emailId));
+		System.out.println("Is Last Name valid ? : "+isValidLastName(lastName));
+		System.out.println("Is an Email ID valid : "+isValidEmailId(emailId));
+		System.out.println("Is a Mobile Number valid ? : "+isValidMobileNo(mobileNo));
+
+
 	}
 
 }
