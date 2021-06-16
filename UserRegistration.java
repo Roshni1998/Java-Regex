@@ -26,7 +26,7 @@ public class UserRegistration {
 	// Last name starts with Cap and has minimum 3 characters
 	
 	public static boolean isValidLastName(String lastName) {
-		return Pattern.matches("^[A-Z][a-z]{3,15}$", lastName);
+		return Pattern.matches("^[A-Z]{1}[a-z_-]{3,15}$", lastName);
 	}
 	
 	/*UC-3*/
@@ -41,6 +41,11 @@ public class UserRegistration {
 		return Pattern.matches("(0|91)?\s([7-9][0-9]{9})", mobileNo);
 	}
 	
+	/*UC-5*/
+	//Password should contain minimum 8 Characters
+	public static boolean isValidPassword(String password) {
+		return Pattern.matches("^.{8,20}$", password);
+	}
 	
 	public static void main(String[] args) {
 		
@@ -53,12 +58,14 @@ public class UserRegistration {
 		String emailId = in.nextLine();
 		System.out.println("Enter Your Mobile Number : ");
 		String mobileNo = in.nextLine();
+		System.out.println("Enter Your Password : ");
+		String password = in.nextLine();
 		
-		System.out.println("Is First Name valid ? : "+isValidFirstName(firstName));
-		System.out.println("Is Last Name valid ? : "+isValidLastName(lastName));
-		System.out.println("Is an Email ID valid : "+isValidEmailId(emailId));
-		System.out.println("Is a Mobile Number valid ? : "+isValidMobileNo(mobileNo));
-
+		System.out.println("Is First Name valid ? : " +isValidFirstName(firstName));
+		System.out.println("Is Last Name valid ? : " +isValidLastName(lastName));
+		System.out.println("Is Email ID valid ? : " +isValidEmailId(emailId));
+		System.out.println("Is Mobile Number valid ? : " +isValidMobileNo(mobileNo));
+		System.out.println("Is a Password valid ?: " +isValidPassword(password));
 
 	}
 
