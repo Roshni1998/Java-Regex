@@ -19,14 +19,14 @@ public class UserRegistration {
 	//First name starts with Cap and has minimum 3 characters
 	
 	public static boolean isValidFirstName(String firstName) {
-		return Pattern.matches("^[A-Z][a-z]{3,15}$", firstName);
+		return Pattern.matches("^[A-Z][a-z_-]{3,15}$", firstName);
 	}
 	
 	/*UC-2*/
 	// Last name starts with Cap and has minimum 3 characters
 	
 	public static boolean isValidLastName(String lastName) {
-		return Pattern.matches("^[A-Z]{1}[a-z_-]{3,15}$", lastName);
+		return Pattern.matches("^[A-Z][a-z]{3,15}$", lastName);
 	}
 	
 	/*UC-3*/
@@ -41,10 +41,12 @@ public class UserRegistration {
 		return Pattern.matches("(0|91)?\s([7-9][0-9]{9})", mobileNo);
 	}
 	
-	/*UC-5*/
-	//Password should contain minimum 8 Characters
+	/*UC-5, UC-6*/
+	/* Password should contain minimum 8 Characters
+	 * Password should have at least 1 Upper Case
+	 */
 	public static boolean isValidPassword(String password) {
-		return Pattern.matches("^.{8,20}$", password);
+		return Pattern.matches("^(?=.*[A-Z]).{8,20}$", password);
 	}
 	
 	public static void main(String[] args) {
@@ -66,6 +68,7 @@ public class UserRegistration {
 		System.out.println("Is Email ID valid ? : " +isValidEmailId(emailId));
 		System.out.println("Is Mobile Number valid ? : " +isValidMobileNo(mobileNo));
 		System.out.println("Is a Password valid ?: " +isValidPassword(password));
+
 
 	}
 
